@@ -14,6 +14,11 @@
     margin:15px;
 }
 
+.short-url-container{
+    text-align:center;
+    padding:10px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
