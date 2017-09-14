@@ -1,0 +1,10 @@
+@model string
+
+@if(!string.IsNullOrWhiteSpace(Model))
+{
+    <div class="form-row align-items-center">
+        <div class="col-sm-12 short-url-container">
+            <h2>share: <a href="@Model" target="_blank" class="short-url">@Model</a></h2>
+        </div>
+    </div>
+} 

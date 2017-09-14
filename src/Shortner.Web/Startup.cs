@@ -22,6 +22,8 @@ namespace Shortner.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<Settings>(Configuration.GetSection("ShortenerSettings"));
+
             var sqlConnectionString = Configuration.GetConnectionString("default");
             services.AddDbContext<DbUrlContext>(options =>
                 options.UseMySql(
@@ -39,13 +41,8 @@ namespace Shortner.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-
+            
             app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
