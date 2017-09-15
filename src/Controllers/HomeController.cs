@@ -30,7 +30,8 @@ namespace Shortener.Web.Controllers
             var longUrl = new LongUrl
             {
                 Url = model.RawUrl,
-                Date = DateTime.UtcNow
+                Date = DateTime.UtcNow,
+                AltId = Guid.NewGuid().ToString()
             };
 
             await dbUrlContext.AddAsync(longUrl);
