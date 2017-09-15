@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Shortner.Web.Data;
-using Shortner.Web.Models;
+using Shortener.Web.Data;
+using Shortener.Web.Models;
 
-namespace Shortner.Web.Controllers
+namespace Shortener.Web.Controllers
 {
     public class HomeController : Controller
     {

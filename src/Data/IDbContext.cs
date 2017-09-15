@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace Shortner.Web.Data
+namespace Shortener.Web.Data
 {
     public interface IDbUrlContext
     {

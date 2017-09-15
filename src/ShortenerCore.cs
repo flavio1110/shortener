@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Shortner.Web.Data
+namespace Shortener.Web.Data
 {
     public static class ShortenerCore
     {

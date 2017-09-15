@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Shortner.Web.Models
+namespace Shortener.Web.Models
 {
     public class UrlShortener
     {

@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Shortner.Web.Data;
+using Shortener.Web.Data;
 
-namespace Shortner.Web
+namespace Shortener.Web
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace Shortner.Web
             services.AddDbContext<DbUrlContext>(options =>
                 options.UseMySql(
                     sqlConnectionString,
-                    b => b.MigrationsAssembly("Shortner.Web")
+                    b => b.MigrationsAssembly("Shortener.Web")
                 )
             );
 

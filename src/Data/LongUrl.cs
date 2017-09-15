@@ -1,6 +1,6 @@
 using System;
 
-namespace Shortner.Web.Data
+namespace Shortener.Web.Data
 {
     public class LongUrl
     {
