@@ -19,6 +19,10 @@ namespace Shortener.Web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+               .ConfigureAppConfiguration((builderContext, config) =>
+                {
+                    config.AddEnvironmentVariables();
+                })
                 .UseStartup<Startup>()
                 .Build();
     }
