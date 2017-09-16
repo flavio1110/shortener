@@ -40,8 +40,8 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - export ShortenerSettings__Url=https://s.fsilva.me/
-      - export ConnectionStrings__default=${STR_CON}
+      - export EXTERNAL_URL=https://s.fsilva.me/
+      - export STR_CON=${STR_CON}
       - docker image prune -af
       - docker login --username=registry --password=$REGISTRY_PASSWORD registry.fsilva.me
       - docker stack deploy --with-registry-auth -c stack.yml shortener
