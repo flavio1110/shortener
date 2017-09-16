@@ -1,20 +1,16 @@
 version: '3'
 
 services:
-  api:
-    image: registry.fsilva.me/rest-country:${IMAGE_VERSION}
+  web:
+    image: registry.fsilva.me/shortener:${IMAGE_VERSION}
     ports:
-      - 5050:80
+      - 5051:80
     networks:
       - mynet     
     environment:
     - ShortenerSettings__Url=${EXTERNAL_URL}
     - ConnectionStrings__default=${STR_CON} 
     deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 60s
       placement:
         constraints:
           - node.labels.stack == app
