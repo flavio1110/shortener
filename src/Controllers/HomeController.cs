@@ -21,6 +21,7 @@ namespace Shortener.Web.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Url = settings.Url;
             return View();
         }
 
