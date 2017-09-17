@@ -36,6 +36,8 @@ pipeline:
     commands:
     - export ConnectionStrings__default=$STR_CON
     - cd src/
+    - dotnet --info
+    - dotnet restore
     - dotnet ef database update --configuration Release
     secrets: [ STR_CON ]
     
