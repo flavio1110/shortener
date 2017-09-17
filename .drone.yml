@@ -28,6 +28,17 @@ pipeline:
       - docker push registry.fsilva.me/shortener:1.0.${DRONE_BUILD_NUMBER}
     secrets: [ REGISTRY_PASSWORD ]
 
+  apply-database-changes:
+    image: microsoft/dotnet:2.0.0-sdk
+    when:
+      event: push
+    privileged: true
+    commands:
+    - export ConnectionStrings__default=$STR_CON
+    - cd src/
+    - dotnet ef database update --configuration Release
+  secrets: [ STR_CON ]
+    
   deploy-containers: 
     image: docker:17.04.0-ce
     when:
