@@ -38,8 +38,7 @@ pipeline:
     - cd src/
     - dotnet --info
     - dotnet restore
-    - dotnet build
-    - dotnet ef database update -v diag
+    - dotnet ef database update --verbose
     secrets: [ STR_CON ]
     
   deploy-containers: 
