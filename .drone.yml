@@ -35,6 +35,7 @@ pipeline:
     privileged: true
     commands:
     - export ConnectionStrings__default=$STR_CON
+    - echo $ConnectionStrings__default
     - cd src/
     - dotnet ef database update --configuration Release
   secrets: [ STR_CON ]
