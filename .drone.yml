@@ -37,7 +37,7 @@ pipeline:
     - export ConnectionStrings__default=$STR_CON
     - cd src/
     - dotnet ef database update --configuration Release
-  secrets: [ STR_CON ]
+    secrets: [ STR_CON ]
     
   deploy-containers: 
     image: docker:17.04.0-ce
