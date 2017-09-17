@@ -39,7 +39,7 @@ pipeline:
     - dotnet --info
     - dotnet restore
     - dotnet build
-    - dotnet ef database update --configuration Release
+    - dotnet ef database update -v diag
     secrets: [ STR_CON ]
     
   deploy-containers: 
