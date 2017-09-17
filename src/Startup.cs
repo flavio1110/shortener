@@ -26,10 +26,11 @@ namespace Shortener.Web
 
             var sqlConnectionString = Configuration.GetConnectionString("default");
             services.AddDbContext<DbUrlContext>(options =>
-                options.UseMySql(
-                    sqlConnectionString,
-                    b => b.MigrationsAssembly("Shortener.Web")
-                )
+                options.UseMySql(sqlConnectionString, b => 
+                {
+                    b.MigrationsAssembly("Shortener.Web");
+                    b.MigrationsHistoryTable("__MigrationHistory");
+                })
             );
 
             services.AddMvc();

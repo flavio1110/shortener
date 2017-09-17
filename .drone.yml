@@ -38,6 +38,7 @@ pipeline:
     - cd src/
     - dotnet --info
     - dotnet restore
+    - dotnet build
     - dotnet ef database update --configuration Release
     secrets: [ STR_CON ]
     
